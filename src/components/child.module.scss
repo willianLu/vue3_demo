@@ -1,0 +1,26 @@
+.child {
+    .canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        div {
+            position: relative;
+            z-index: 1;
+            width: 80%;
+            height: 300px;
+            border-radius: 30px;
+            background-color: #fff;
+        }
+    }
+}

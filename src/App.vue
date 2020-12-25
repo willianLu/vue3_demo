@@ -1,15 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div>
+    <button @click="ckey = 'home'">首页</button>
+    <button @click="ckey = 'other'">其他</button>
+  </div>
+  <!-- <Home v-if="isShow" /> -->
+  <component :is="ckey"></component>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import HelloWorld from "./components/HelloWorld.vue";
+import Home from "./views/index.vue";
+import Other from "./views/other.vue";
 
 @Options({
   components: {
-    HelloWorld
+    Home,
+    Other
+  },
+  data() {
+    return {
+      isShow: true,
+      ckey: "home"
+    };
   }
 })
 export default class App extends Vue {}
